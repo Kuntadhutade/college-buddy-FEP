@@ -1,0 +1,103 @@
+/* Basic full-screen centered login and dashboard layout.
+   You can adjust colors to match your screenshot: primary rgb(38,113,206) etc. */
+
+:root{
+  --primary: rgb(38,113,206);
+  --bg: #111217;
+  --card-bg: #1b1f24;
+  --muted: #bfc7d3;
+}
+
+*{box-sizing:border-box;font-family:Inter,system-ui,Arial,sans-serif}
+
+body,html,#root{
+  height:100%;
+  margin:0;
+  background: linear-gradient(180deg, #0f1720 0%, #0b1220 100%);
+  color: #e6eef8;
+}
+
+/* Login full page center */
+.page-center{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.login-card{
+  width:380px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:12px;
+  padding:28px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  border:1px solid rgba(255,255,255,0.04);
+}
+
+.logo{
+  margin:0 0 6px 0;
+  font-weight:700;
+  color: var(--primary);
+  font-size:22px;
+}
+
+.sub{margin:0 0 16px 0;color:var(--muted)}
+
+.login-form label{
+  display:block;
+  margin-bottom:12px;
+  font-size:13px;
+  color:var(--muted);
+}
+.login-form input{
+  width:100%;
+  padding:10px 12px;
+  margin-top:6px;
+  border-radius:8px;
+  background:#0f1720;
+  border:1px solid rgba(255,255,255,0.04);
+  color:#e6eef8;
+  outline:none;
+}
+.btn-primary{
+  width:100%;
+  padding:10px;
+  margin-top:12px;
+  border-radius:8px;
+  border:0;
+  background:var(--primary);
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+}
+.note{font-size:12px;color:var(--muted);margin-top:10px}
+
+.error{color:#ff6b6b;padding:8px 0;font-size:13px}
+
+/* Dashboard layout */
+.dashboard-wrapper{
+  display:flex;
+  min-height:100vh;
+  background: linear-gradient(90deg, rgba(10,10,14,0.6), rgba(8,10,12,0.6));
+}
+
+/* Sidebar */
+.sidebar{
+  width:220px;
+  background: linear-gradient(180deg, #0e1116, #0b0d12);
+  padding:20px;
+  border-right:1px solid rgba(255,255,255,0.03);
+}
+.brand{color:var(--primary);font-weight:700;margin-bottom:16px}
+.sidebar ul{list-style:none;padding:0;margin:0}
+.sidebar li{padding:10px 8px;border-radius:6px;color:var(--muted);margin-bottom:6px;cursor:pointer}
+.sidebar li.active{background:rgba(255,255,255,0.02);color:#fff;font-weight:600}
+.logout-btn{margin-top:16px;padding:8px 10px;border-radius:6px;border:0;background:#3b3f46;color:white;cursor:pointer}
+
+/* Main area */
+.main-area{flex:1; padding:20px}
+.topbar{display:flex;justify-content:flex-end;padding:8px 0;color:var(--muted)}
+.content{padding:10px 0}
+.cards{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
+.card{flex:1 1 220px;background:var(--card-bg);padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
